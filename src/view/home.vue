@@ -16,8 +16,6 @@
 				<mt-swipe-item v-for="img in imgs">
 					<img v-lazy="img">
 				</mt-swipe-item>
-				<!-- <mt-swipe-item>2</mt-swipe-item>
-				<mt-swipe-item>3</mt-swipe-item> -->
 			</mt-swipe>
 		</section>
 		<section class="part1">
@@ -33,40 +31,99 @@
 				<i class="fa fa-check-circle-o check-icon" aria-hidden="true"></i>
 				<span class="text">满59元免运费</span>
 			</div>
-			<!-- <div  class="text-content">
-				<i class="fa fa-check-circle-o check-icon" aria-hidden="true"></i>
-				<span class="text">2000城市货到付款</span>
-			</div> -->
+			<div style="clear:left;"></div>
 		</section>
 		<section class="part2">
-			<span>
-				<img src="../assets/img/4.png">
-			</span>
-			<span>
-				<img src="../assets/img/5.png">
-			</span>
+			<div class="part2-content">
+				<div class="part2-img">
+					<p>
+						<img src="../assets/img/4.png">
+					</p>
+					<p>
+						<img src="../assets/img/5.png">
+					</p>
+					<div style="clear:left;"></div>
+				</div>
+			</div>
 		</section>
+		<section class="part3">
+			<h3>8大热销茶叶品类</h3>
+			<p>总有你想不到的低价</p>
+			<div v-for="item in list" class="list-img">
+				<img v-lazy="item">
+			</div>
+		</section>
+		<section class="part4">
+			<div class="part4-content">
+				<div class="newProducts">
+					<h3>{{ products.title }}</h3>
+					<p class="text">{{ products.note }}</p>
+					<div class="product" v-for="product in products.data">
+						<img :src=product.img>
+						<p class="product-p1">{{ product.bigContent }}</p>
+						<p class="product-p2">
+							<span v-html="product.smallContent"></span>
+							<span class="money"><i class="fa fa-jpy" aria-hidden="true"></i>{{ product.price.toFixed(2) }}</span> 
+							<!-- 保留两位小数点  -->
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<NavBar></NavBar>
 	</div>
 </template>
 <script>
 	import img1 from '../assets/img/1.jpg'
 	import img2 from '../assets/img/2.jpg'
 	import img3 from '../assets/img/3.jpg'
+	import img6 from '../assets/img/6.jpg'
+	import img7 from '../assets/img/7.jpg'
+	import img8 from '../assets/img/8.jpg'
+	import img9 from '../assets/img/9.jpg'
+	import img10 from '../assets/img/10.jpg'
+	import img11 from '../assets/img/11.jpg'
+	import img12 from '../assets/img/12.jpg'
+	import img13 from '../assets/img/13.jpg'
+
+	import {api} from '../global/api'
+	import NavBar from '@/view/NavBar'
 	export default{
 		data(){
 			return {
 				value:'',
-				imgs:[img1,img2,img3]
+				imgs:[img1,img2,img3],
+				list:[img6,img7,img8,img9,img10,img11,img12,img13],
+				loading:false,
+				products:'',
 			}
 		},
+		components:{
+			NavBar
+		},
+		mounted:function(){
+			this.getData();
+		},
 		methods:{
-			
+			getData:function(){
+				console.log("aaa");
+				this.$http.get(api.home).then((response) => {
+					// console.log(response);
+					this.products=response.data;
+					// console.log("products的值",this.products);
+				})
+			}
+			// loadMore:function(){
+			// 	this.loading=true;
+			// 	setTimeout(() => {
+			// 		this.loading=false;
+			// 	},6000);
+			// }
 		}
 	}
 	
 </script>
 <style >
-
 	/*标题、搜索框、bars*/
 	.home header{
 		width: 100%;
@@ -125,8 +182,11 @@
 		width: 100%;
 		height: 100%;
 	}
+
+	/*担保信息*/
 	.home .part1 .text-content{
 		width: 33%;
+		height: 100%;
 		line-height: 3rem;
 		text-align: center;
 		float: left;
@@ -140,6 +200,94 @@
 		font-weight: 200;
 	}
 
+	/*XXXX馆*/
+	.home .part2,.home .part4{
+		width: 100%;
+		background: #f1f1f1;
+	}
+	.home .part2 .part2-content,
+	.home .part4 .part4-content{
+		padding-top: 3%;
+		padding-bottom: 3%;
+	}
+	.home .part2 .part2-img,
+	.home .part4 .part4-content .newProducts{
+		width: 100%;
+		background: #fff; 
+	}
+	.home .part2 p{
+		width: 45%;
+		float: left;
+		padding-left: 3%;
+		padding-top: 3%;
+		padding-bottom: 2.5%;
+	}
+	.home .part2 p img{
+		width: 100%;
+		height: 100%;
+	}
+
+	/*热销茶叶*/
+	.home .part3 h3,
+	.home .part4 .part4-content .newProducts h3{
+		width: 100%;
+		text-align: center;
+		color: #10181f;
+		font-weight: 300;
+		line-height: 40px;
+	}
+	.home .part3 p,
+	.home .part4 .part4-content .newProducts .text{
+		color: #999;
+		font-size: 0.8rem;
+		width: 100%;
+		text-align: center;
+		padding-bottom: 3%;
+	}
+	.home .part3 .list-img{
+		width: 92%;
+		margin-left: 4%;
+	}
+	.home .part3 div:last-child{
+		margin-bottom:3%;
+	}
+	.home .part3 img{
+		width: 100%;
+		height: 100%;
+	}
+
+	/*人气新品*/
+	.home .part4 .product{
+		width: 92%;
+		margin-left: 4%;
+		border-bottom: 1px solid #f1f1f1;
+	}
+	.home .part4 .product img{
+		width: 100%;
+		height: 100%;
+		margin-top: 3%;
+	}
+	.home .part4 .product img:first-child{
+		margin-top: 0px;
+	}
+	.home .part4 .newProducts .product p{
+		font-size: 0.95rem;
+		color: #10181f;
+	}
+	.home .part4 .newProducts .product .product-p1{
+		padding-top: 3%;
+	}
+	.home .part4 .newProducts .product .product-p2{
+		padding-bottom: 3%;
+	}
+	.home .part4 .newProducts .product p span{
+		color: #555;
+		font-size: 0.8rem;
+	}
+	.home .part4 .newProducts .product p .money{
+		color: #ff3600;
+		float: right;
+	}
 
 
 	@media screen and (min-width: 768px) {
@@ -153,11 +301,11 @@
 			font-size: 1rem;
 		}
     	.home .swipe{
-			width: 100%;
 			height: 19.5rem;
 		}
 		.home .part1 .text-content .text{
 			font-size: 1rem;
 		}
+		
 	}
 </style>
