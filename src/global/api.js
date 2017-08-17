@@ -7,5 +7,6 @@ let url={
 }
 
 export const api={
-	'home':url.staticPath+'dataJson/home.json'
+	'home':url.staticPath+'dataJson/home.json',
+	'classify':url.staticPath+'dataJson/classify.json'
 }

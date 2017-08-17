@@ -70,7 +70,6 @@
 				</div>
 			</div>
 		</section>
-		<NavBar></NavBar>
 	</div>
 </template>
 <script>
@@ -87,7 +86,6 @@
 	import img13 from '../assets/img/13.jpg'
 
 	import {api} from '../global/api'
-	import NavBar from '@/view/NavBar'
 	export default{
 		data(){
 			return {
@@ -98,9 +96,6 @@
 				products:'',
 			}
 		},
-		components:{
-			NavBar
-		},
 		mounted:function(){
 			this.getData();
 		},
@@ -108,9 +103,7 @@
 			getData:function(){
 				console.log("aaa");
 				this.$http.get(api.home).then((response) => {
-					// console.log(response);
 					this.products=response.data;
-					// console.log("products的值",this.products);
 				})
 			}
 			// loadMore:function(){
@@ -306,6 +299,19 @@
 		.home .part1 .text-content .text{
 			font-size: 1rem;
 		}
-		
+		.home .part3 h3,
+		.home .part4 .part4-content .newProducts h3{
+			font-size: 1.5rem;
+		}
+		.home .part3 p,
+		.home .part4 .part4-content .newProducts .text{
+			font-size: 1rem;
+		}
+		.home .part4 .newProducts .product p{
+			font-size: 1.2rem;
+		}
+		.home .part4 .newProducts .product p span{
+			font-size: 1rem;
+		}
 	}
 </style>
