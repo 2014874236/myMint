@@ -6,13 +6,40 @@
 		  	</router-link>
 		</mt-header>
 		<div class="registerContent">
-			<form :model="rulesForm" :rules="rules" ref="rulesForm">
-				<mt-field label="用户名"  placeholder="请输入用户名" v-model="rulesForm.username"></mt-field>
-				<mt-field label="邮箱" placeholder="请输入邮箱" type="email" v-model="rulesForm.email"></mt-field>
-				<mt-field label="电话" prop="phone" placeholder="请输入电话号码" type="tel" v-model="rulesForm.phone"></mt-field>
-				<mt-field label="密码" placeholder="请输入密码" type="password" v-model="rulesForm.password"></mt-field>
-				<mt-field label="重复密码" placeholder="请重复输入密码" type="password" v-model="rulesForm.dbpassword"></mt-field>
-				<mt-button type="danger" class="btn" @click="registerSubmit">注册</mt-button>
+			<form :model="rulesForm" ref="rulesForm">
+				<section>
+					<div>
+						<label id="username">用户名</label>
+						<input type="text" id="username" v-model="rulesForm.username" placeholder="请输入用户名">
+					</div>
+				</section>
+				<!-- <section>
+					<div>
+						<label id="email">邮箱</label>
+						<input type="text" id="email" v-model="rulesForm.email" placeholder="请输入邮箱">
+					</div>
+				</section> -->
+				<section>
+					<div>
+						<label id="phone">电话</label>
+						<input type="text" id="phone" v-model="rulesForm.phone" placeholder="请输入电话号码">
+					</div>
+				</section>
+				<section>
+					<div>
+						<!-- <label id="password">密码</label> -->
+						<input type="text" id="password" v-model="rulesForm.password" placeholder="请输入密码">
+					</div>
+				</section>
+				<section>
+					<div>
+						<!-- <label id="dbpassword">重复密码</label> -->
+						<input type="text" id="dbpassword" v-model="rulesForm.dbpassword" placeholder="请重复输入密码">
+					</div>
+				</section>
+				<section>
+					<mt-button type="danger" class="btn" @click="registerSubmit">注册</mt-button>
+				</section>
 			</form>
 		</div>
 	</div>
@@ -22,18 +49,6 @@
 	import {api} from '../global/api';
 	export default{
 		data(){
-			
-			// var validatorPhone=(rule,value,callback) => {
-			// 	if(!value){
-			// 		new Error("请输入电话号码");
-			// 	}
-			// 	else if(!(/^[0-9]{11}$/.test(value))){
-			// 		new Error("请输入11位数字");
-			// 	}
-			// 	else{
-			// 		callback();
-			// 	}
-			// };
 			return {
 				rulesForm:{
 					username:'',
@@ -42,13 +57,7 @@
 					dbpassword:'',
 					phone:''
 				},
-				form:'',
-				rules:{
-				// 	// username:{},
-				// 	phone:[ 
-				// 		{ validator:validatorPhone,trigger:'blur' }
-				// 	]
-				}
+				form:''
 			}
 		},
 		mounted:function(){
@@ -117,17 +126,52 @@
 	}
 </script>
 <style>
+	.register{
+		background: #f4f4f4;
+		width: 100%;
+		height: 100%;
+	}
 	.register .mint-header{
 		background-color:#1b1b20;
 		color: #fff;
 		font-size: 1rem;
 		z-index: 100;
 	}
-	.register form .btn{
+	.register .registerContent section{
+		width: 100%;
+		text-align: center;
+		line-height: 2.5rem;
+		margin-top: 2rem;
+		margin-bottom: 0.28rem;
+	}
+	.register .registerContent div{
+		width: 90%;
+		display: inline-block;
+		border: 1px solid #e0e0e0;
+		background: #fff;
+	}
+	.register .registerContent div label{
+		width: 25%;
+		line-height: 2.5rem;
+		float: left;
+		display: block;
+		text-align: center;
+		font-size: 1rem;
+		color: #333;
+	}
+	.register .registerContent div input{
+		font-size: 0.9rem;
+	    border: 0;
+	    line-height: 2.5rem;
+	    width: 75%;
+	    outline: none;
+	}
+    
+	/*.register form .btn{
 		margin-top: 5%;
 		margin-left: 40%;
 		text-align: center;
-	}
+	}*/
 	@media screen and (min-width: 768px) {
 		.register .mint-header{
 			font-size: 1.5rem;
