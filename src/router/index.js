@@ -9,6 +9,8 @@ import Home from '@/view/home'
 import Classify from '@/view/classify'
 // 用户注册
 import Register from '@/view/register'
+// 用户登录
+import Login from '@/view/login'
 
 
 Vue.use(Router)
@@ -20,6 +22,7 @@ export default new Router({
     		{ path:'home',component:Home },
     		{ path:'classify',component:Classify },
     		{ path:'register',component:Register },
+        { path:'login',component:Login },
    			{ path:'', redirect:'home' }
     	]
 	}

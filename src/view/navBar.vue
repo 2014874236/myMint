@@ -14,7 +14,7 @@
 		    	</router-link>
 		  	</mt-tab-item>
 		  	<mt-tab-item id="cart">
-		  		<router-link to="/classify">
+		  		<router-link to="/login">
 			  		<p><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
 			    	<p>购物车</p>
 			    </router-link>
