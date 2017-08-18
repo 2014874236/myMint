@@ -1,9 +1,7 @@
 <template>
 	<div class="register">
 		<mt-header title="用户注册">
-		   	<router-link to="/" slot="left">
-		    	<mt-button icon="back">返回</mt-button>
-		  	</router-link>
+		    <mt-button icon="back" slot="left" @click="goBack">返回</mt-button>
 		</mt-header>
 		<div class="registerContent">
 			<form :model="rulesForm" ref="rulesForm">
@@ -75,6 +73,9 @@
 			this.getData();
 		},
 		methods:{
+			goBack:function(){
+				this.$router.go(-1);
+			},
 			getData:function(){
 				this.$http.get(api.login).then(function(response){
 					console.log("response的值",response);
@@ -148,12 +149,17 @@
 	}
 </script>
 <style>
+	/*头部*/
 	.register .mint-header{
 		background-color:#1b1b20;
 		color: #fff;
 		font-size: 1rem;
 		z-index: 100;
 	}
+	.register button,.register button label{
+		cursor:pointer;
+	}
+	/*中间注册相关信息*/
 	.register .registerContent section{
 		width: 100%;
 		text-align: center;
@@ -165,7 +171,7 @@
 		margin-top: 2rem;
 	}
 	.register .registerContent div{
-		width: 90%;
+		width: 80%;
 		display: inline-block;
 		border: 1px solid #e0e0e0;
 		background: #fff;
@@ -206,16 +212,20 @@
      	width: 38%;
      	background: #ff3600;
      	border-radius: 0px;
+     	cursor:pointer;
      }
      .register .registerContent div .codeBtn label{
      	width: 100%;
      	color: #fff;
      }
+     /*注册按钮*/
      .register .registerContent .btn{
-     	width: 90%;
+     	width:80%;
      	background: #ff3600;
      	border-radius: 0px;
+     	cursor:pointer;
      }
+     /*协议部分*/
      .register .footer{
      	line-height: 2.5rem;
      	color: #999;
@@ -224,8 +234,10 @@
      }
      .register .footer i,.register .footer span{
      	color: #ff3600;
+     	cursor:pointer;
      }
 	@media screen and (min-width: 768px) {
+		/*头部*/
 		.register .mint-header{
 			font-size: 1.5rem;
 			height: 50px;

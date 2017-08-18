@@ -31,7 +31,7 @@ module.exports = {
     staticPath:'/static/',   //以/开头绝对路径
     proxyTable: {
         '/v1': {
-            target: 'http://cangdu.org:8001',
+            target: 'http://images.cangdu.org/',
             changeOrigin : true,
             pathRewrite: {
               '^/v1': '/v1'

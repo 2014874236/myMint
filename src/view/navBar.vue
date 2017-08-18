@@ -13,14 +13,20 @@
 			    	<p>分类</p>
 		    	</router-link>
 		  	</mt-tab-item>
-		  	<mt-tab-item id="cart">
+		  	<mt-tab-item id="cart" v-if="loginStatus === true">
+		  		<router-link to="/login">
+			  		<p><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+			    	<p>购物车</p>
+			    </router-link>
+		  	</mt-tab-item>
+		  	<mt-tab-item id="cart" v-else>
 		  		<router-link to="/login">
 			  		<p><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
 			    	<p>购物车</p>
 			    </router-link>
 		  	</mt-tab-item>
 		  	<mt-tab-item id="user">
-		  		<router-link to="/register">
+		  		<router-link to="/login">
 			  		<p><i class="fa fa-user-o" aria-hidden="true"></i></p>
 			    	<p>我的</p>
 			    </router-link>
@@ -30,11 +36,13 @@
 	</div>
 </template>
 <script>
+	import store from '../store'
 	export default{
 		data(){
 			return{
-				selected:'home',
-				fixed:true
+				selected:'',
+				fixed:true,
+				loginStatus:store.state.loginStatus
 			}
 		}
 	} 
@@ -48,19 +56,15 @@
 	.navBar .mint-tabbar > .mint-tab-item.is-selected{
 		background-color: #fafafa;
 	}
-	
-	.navBar a.is-selected p{
-		color: #ff3600;
-	}
 	.navBar div i{
 		font-size: 1rem;
 	}
 	.navBar a{
 		text-decoration: none;
 	}
-	/*.navBar a.router-link-active{
+	.navBar a.router-link-active p{
 		color: #ff3600;
-	}*/
+	}
 	@media screen and (min-width: 768px) {
 		.navBar p{
 			font-size: 1rem;

@@ -117,6 +117,9 @@
 	
 </script>
 <style >
+	.home{
+		background: #fff;
+	}
 	/*标题、搜索框、bars*/
 	.home header{
 		width: 100%;

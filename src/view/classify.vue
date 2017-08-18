@@ -1,9 +1,7 @@
 <template>
 	<div class="classify">
 		<mt-header fixed title="全部产品分类">
-		  	<router-link to="/" slot="left">
-		    	<mt-button icon="back">返回</mt-button>
-		  	</router-link>
+		    <mt-button icon="back" slot="left" @click="goBack">返回</mt-button>
 		</mt-header>
 		<div class="search">
 			<mt-search v-model="value"  cancel-text="取消"  placeholder="搜索您想要的产品"></mt-search>
@@ -35,6 +33,9 @@
 			this.getData();
 		},
 		methods:{
+			goBack:function(){
+				this.$router.go(-1);
+			},
 			getData:function(){
 				this.$http.get(api.classify).then((response) => {
 					this.lists=response.data.data;
@@ -53,6 +54,10 @@
 		color: #fff;
 		font-size: 1rem;
 		z-index: 100;
+	}
+	/*返回按钮*/
+	.classify button,.classify button label{
+		cursor:pointer;
 	}
 	/*搜索*/
 	.classify .search{
