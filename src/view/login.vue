@@ -42,7 +42,7 @@
 			return {
 				loginForm:store.state.loginForm,
 				form:'',
-				loginStatus:store.state.loginStatus
+				// loginStatus:store.state.loginStatus
 				 // captchaCodeImg:''
 			}
 		},
@@ -73,13 +73,16 @@
 				}
 				if(flag === 0){
 					MessageBox.alert("用户名或密码不正确", "提示");
+					this.loginForm.username='';
+					this.loginForm.password='';
 				}
 				else{
 					this.$router.push({ path:'/home',component:Home });
-					this.loginStatus=true;
+					// this.loginStatus=true;
+					// store.dispatch('setloginStatus',this.loginStatus);
+					// console.log("login页面的loginStatus值",this.loginStatus);
 				}
-				this.loginForm.username='';
-				this.loginForm.password='';
+				
 			}
 			// getCaptchas:function(){
 			// 	this.$http.get(api.captchas).then((response) => {
@@ -137,7 +140,7 @@
 	}
 	@media screen and (min-width: 768px) {
 		/*头部*/
-		.register .mint-header{
+		.login .mint-header{
 			font-size: 1.5rem;
 			height: 50px;
 		}

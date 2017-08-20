@@ -11,6 +11,11 @@ import Classify from '@/view/classify'
 import Register from '@/view/register'
 // 用户登录
 import Login from '@/view/login'
+// 购物车
+import Shopping from '@/view/shopping/shopping'
+import EmptyShopping from '@/view/shopping/emptyShopping'
+// 个人中心
+import Personal from '@/view/personal'
 
 
 Vue.use(Router)
@@ -21,6 +26,12 @@ export default new Router({
     	children:[
     		{ path:'home',component:Home },
     		{ path:'classify',component:Classify },
+        { path:'shopping',component:Shopping
+          // children:[
+          //   { path:'emptyShopping',component:EmptyShopping }
+          // ]
+        },
+        { path:'personal',component:Personal },
     		{ path:'register',component:Register },
         { path:'login',component:Login },
    			{ path:'', redirect:'home' }
