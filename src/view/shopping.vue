@@ -1,6 +1,6 @@
 <template>
 	<div class="shopping">
-		<mt-header title="ddd购物车">
+		<mt-header title="购物车">
 		    <mt-button icon="back" slot="left" @click="goBack">返回</mt-button>
 		</mt-header>
 		<div class="emptyShopping">
@@ -9,11 +9,26 @@
 	</div>
 </template>
 <script>
+	import Login from '@/view/login'
 	export default{
 		data(){
 			return{
 
 			}
+		},
+		computed:{
+			loginStatus(){
+				return this.$store.state.loginStatus;
+			}
+			
+		},
+		mounted:function(){
+			// 未登录状态重定向到登录页面
+			if(this.loginStatus){
+				this.$router.push({path:'/login',component:Login})
+			}
+			console.log('tai',this.loginStatus) 
+			console.log(0)
 		},
 		methods:{
 			goBack:function(){
@@ -34,11 +49,10 @@
 	.shopping button,.shopping button label{
 		cursor:pointer;
 	}
-	@media screen and (min-width: 768px) {
-		/*头部*/
-		.shopping .mint-header{
-			font-size: 1.5rem;
-			height: 50px;
-		}
+	.shopping .emptyShopping p{
+		color: #999;
+		font-size: 1rem;
+		width: 100%;
+		text-align: center;
 	}
 </style>

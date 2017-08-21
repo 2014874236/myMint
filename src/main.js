@@ -8,6 +8,9 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import store from './store'
 
+// 移动端高清屏适配方案
+import './rem.js'
+
 
 Vue.use(VueResource)
 Vue.use(MintUI)

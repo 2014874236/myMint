@@ -52,8 +52,10 @@
 	.classify .mint-header{
 		background-color:#1b1b20;
 		color: #fff;
-		font-size: 1rem;
+		font-size: 0.8rem;
 		z-index: 100;
+		height: 2rem;
+		line-height: 8rem;
 	}
 	/*返回按钮*/
 	.classify button,.classify button label{
@@ -116,16 +118,5 @@
 	}
 	.classify .tea ul li .text{
 		margin-bottom: 10%;
-	}
-
-
-	@media screen and (min-width: 768px) {
-		.classify .mint-header{
-			height: 50px;
-			font-size: 1.5rem;
-		}
-		.classify .search{
-			top:60px;
-		}
 	}
 </style>

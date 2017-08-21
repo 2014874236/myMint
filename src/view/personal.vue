@@ -36,7 +36,57 @@
 				<div style="clear:left;"></div>
 			</ul>
 		</div>
-		<i class="fa fa-file-text-o" aria-hidden="true"></i>
+		<div class="myOrder">
+			<div class="order">
+				<mt-button class="btn"><i class="fa fa-file-text-o" aria-hidden="true"></i></mt-button>
+				<span>我的订单</span>
+				<span class="moreOrder">
+					查看全部订单
+					<i class="fa fa-chevron-right" aria-hidden="true"></i>
+				</span>
+			</div>
+			<div class="orderInfo">
+				<div class="wait">
+					<p><i class="fa fa-file-text-o" aria-hidden="true"></i></p>
+					<p class="text">待付款</p>
+				</div>
+				<div class="wait">
+					<p><i class="fa fa-file-text-o" aria-hidden="true"></i></p>
+					<p  class="text">待发货</p>
+				</div>
+				<div class="wait">
+					<p><i class="fa fa-file-text-o" aria-hidden="true"></i></p>
+					<p class="text">待收货</p>
+				</div>
+				<div class="wait">
+					<p><i class="fa fa-file-text-o" aria-hidden="true"></i></p>
+					<p class="text">待评价</p>
+				</div>
+				<div style="clear:left;"></div>
+			</div>
+		</div>
+		<div class="otherInfo">
+			<div class="address">
+				<mt-button class="btn"><i class="fa fa-map-marker" aria-hidden="true"></i></mt-button>
+				<span>地址管理</span>
+				<span class="right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+			</div>
+			<div class="password">
+				<mt-button class="btn"><i class="fa fa-map-marker" aria-hidden="true"></i></mt-button>
+				<span>修改密码</span>
+				<span class="right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+			</div>
+			<div class="phone">
+				<mt-button class="btn"><i class="fa fa-mobile" aria-hidden="true"></i></mt-button>
+				<span>绑定手机</span>
+				<span class="right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+			</div>
+			<div class="login">
+				<mt-button class="btn"><i class="fa fa-sign-in" aria-hidden="true"></i></mt-button>
+				<span>退出登录</span>
+				<span class="right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+			</div>
+		</div>
 	</div>
 </template>
 <script> 
@@ -113,11 +163,91 @@
 	.personal .accountInfo ul li:first-child{
 		margin-left: 0;
 	}
-	@media screen and (min-width: 768px) {
-		/*头部*/
-		.personal .mint-header{
-			font-size: 1.5rem;
-			height: 50px;
-		}
+	.personal .myOrder{
+		font-size: 1rem;
+		background: #fff;
+	}
+	.personal .myOrder .order{
+		line-height: 4rem;
+		border-bottom: 1px solid #ddd;
+	}
+	.personal .myOrder .btn{
+		background: #828c98;
+		color: #fff;
+		border-radius: 2px;
+		margin-left: 1rem;
+		margin-right: 0.8rem;
+		padding: 0 10px;
+	}
+	.personal .myOrder .btn i{
+		font-size: 1.5rem;
+	}
+	.personal .myOrder .order .moreOrder{
+		float: right;
+		color: #c8c7cc;
+		margin-right: 0.8rem;
+	}
+	.personal .myOrder .orderInfo .wait{
+		float: left;
+		width: 25%;
+		text-align: center;
+		margin-top: 0.8rem;
+		margin-bottom: 0.8rem;
+	}
+	.personal .myOrder .orderInfo .wait i{
+		font-size: 1.5rem;
+		color: #424242;
+	}
+	.personal .myOrder .orderInfo .wait .text{
+		color: #676767;
+		padding-top: 0.5rem;
+	}
+	.personal .otherInfo{
+		margin-top: 1rem;
+		background: #fff;
+	}
+	.personal .otherInfo .address,
+	.personal .otherInfo .password,
+	.personal .otherInfo .phone,
+	.personal .otherInfo .login{
+		line-height: 4rem;
+		border-bottom: 1px solid #ddd;
+	}
+	.personal .otherInfo .login{
+		border-bottom:0;
+	}
+	.personal .otherInfo .address .btn,
+	.personal .otherInfo .password .btn,
+	.personal .otherInfo .phone .btn,
+	.personal .otherInfo .login .btn{
+		background: #51BCE0;
+		color: #FFF;
+		padding: 0 13px;
+		margin-left: 1rem;
+		margin-right: 0.8rem;
+	}
+	.personal .otherInfo .password .btn{
+		background:#ff8c43;
+	}
+	.personal .otherInfo .phone .btn{
+		padding: 0 15px;
+		background:#fa6c5e;
+	}
+	.personal .otherInfo .login .btn{
+		padding: 0 12px;
+		background:#fa6c5e;
+	}
+	.personal .otherInfo .address .btn i,
+	.personal .otherInfo .password .btn i,
+	.personal .otherInfo .phone .btn i{
+		font-size: 1.5rem;
+	}
+	.personal .otherInfo .login .btn i{
+		font-size: 1.2rem;
+	}
+	.personal .otherInfo .right{
+		float: right;
+		margin-right: 0.8rem;
+		color: #c8c7cc;
 	}
 </style>

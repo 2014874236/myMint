@@ -12,7 +12,7 @@ import Register from '@/view/register'
 // 用户登录
 import Login from '@/view/login'
 // 购物车
-import Shopping from '@/view/shopping/shopping'
+import Shopping from '@/view/shopping'
 import EmptyShopping from '@/view/shopping/emptyShopping'
 // 个人中心
 import Personal from '@/view/personal'

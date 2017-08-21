@@ -9,11 +9,20 @@
 	</div>
 </template>
 <script>
+	import store from './../store'
 	export default{
 		data(){
 			return{
 
 			}
+		},
+		mounted:function(){
+			//wei denglu chongdingx login
+			if(!store.state.loginStatus){
+				this.$route.push()
+			}
+			console.log('tai',store.state.loginStatus) 
+			console.log(0)
 		},
 		methods:{
 			goBack:function(){

@@ -236,11 +236,4 @@
      	color: #ff3600;
      	cursor:pointer;
      }
-	@media screen and (min-width: 768px) {
-		/*头部*/
-		.register .mint-header{
-			font-size: 1.5rem;
-			height: 50px;
-		}
-	}
 </style>

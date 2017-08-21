@@ -13,15 +13,8 @@
 			    	<p>分类</p>
 		    	</router-link>
 		  	</mt-tab-item>
-		  	<!-- <mt-tab-item id="cart" v-model="loginStatus" v-if="!loginStatus">
-		  		<router-link to="/login">
-			  		<p><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
-			    	<p>购物车</p>
-			    </router-link>
-		  	</mt-tab-item> -->
 		  	<mt-tab-item id="cart">
-		  		<!-- <router-link to="/shopping"> -->
-		  		<router-link to="/login">
+		  		<router-link to="/shopping">
 			  		<p><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
 			    	<p>购物车</p>
 			    </router-link>
@@ -38,22 +31,12 @@
 </template>
 <script>
 	import store from '../store'
-	import { mapGetters } from 'vuex'
 	export default{
 		data(){
 			return{
 				selected:'',
-				fixed:true,
-				loginStatus:store.getters.userLoginStatus
+				fixed:true
 			}
-		},
-		mounted:function(){
-			console.log("navBar页面的log值inStatus值",this.loginStatus);
-		},
-		methods:{
-			// ...mapGetters([
-			//     'userLoginStatus'
-			//  ])
 		}
 	} 
 </script>
@@ -66,7 +49,7 @@
 	.navBar .mint-tabbar > .mint-tab-item.is-selected{
 		background-color: #fafafa;
 	}
-	.navBar div i{
+	.navBar .nav i{
 		font-size: 1rem;
 	}
 	.navBar a{
@@ -74,13 +57,5 @@
 	}
 	.navBar a.router-link-active p{
 		color: #ff3600;
-	}
-	@media screen and (min-width: 768px) {
-		.navBar p{
-			font-size: 1rem;
-		}
-		.navBar div i{
-			font-size: 1.5rem;
-		}
 	}
 </style>

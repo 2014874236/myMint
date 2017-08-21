@@ -3,9 +3,7 @@
 		<header>
 			<div class="title">醉品商城</div>
 			<div class="search">
-				<mt-search v-model="value" cancel-text="取消" placeholder="搜索">
-  					<!-- <mt-cell v-for="item in result" :title="item.title" :value="item.value"></mt-cell> -->
-				</mt-search>
+				<mt-search v-model="value"  cancel-text="取消"  placeholder="搜索您想要的产品"></mt-search>
 			</div>
 			<div class="icon">
 				<i class="fa fa-bars" aria-hidden="true"></i>
@@ -124,12 +122,13 @@
 	.home header{
 		width: 100%;
 		height: 3rem;
+		line-height: 3rem;
 		background: #ff3600;
 		text-align: center;
 	}
 	.home header .title{
 		float: left;
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 		color: #fff;
 		text-align: center;
 		line-height: 3rem;
@@ -140,21 +139,22 @@
 	.home header .search{
 		float: left;
 		width: 50%;
+		line-height: 3rem;
 	}
-	.home header .search input{
+	/*.home header .search input{
 		font-size: 0.1rem;
-	}
+	}*/
 	.home .mint-search{
 		height: 100%;
 	}
-	.home .mint-searchbar-inner{
-		height: 20px;
+	/*.home .mint-searchbar-inner{
+		height: 1rem;
 		margin-top: 2px;
-	}
-	.home .search .mint-searchbar{
+	}*/
+	/*.home .search .mint-searchbar{
 		background-color: #ff3600;
 		padding-right: 0px;
-	}
+	}*/
 	.home header .search .mint-searchbar-cancel{
 		color: #fff;
 		font-size: 0.1rem;
@@ -162,7 +162,7 @@
 	.home header .icon{
 		width: 10%;
 		float: right;
-		margin-right: 10px;
+		margin-right: 0.5rem;
 		line-height: 3rem;
 		text-align: center;
 		font-size: 1rem;
@@ -188,12 +188,13 @@
 		float: left;
 	}
 	.home .part1 .text-content .text{
-		font-size: 10px;
+		font-size: 0.5rem;
 		color: #666;
 	}
 	.home .part1 .text-content .check-icon{
 		color: #ff3600;
 		font-weight: 200;
+		font-size: 0.7rem;
 	}
 
 	/*XXXX馆*/
@@ -230,15 +231,17 @@
 		text-align: center;
 		color: #10181f;
 		font-weight: 300;
-		line-height: 40px;
+		margin-top: 0.8rem;
+		font-size: 0.8rem;
 	}
 	.home .part3 p,
 	.home .part4 .part4-content .newProducts .text{
 		color: #999;
-		font-size: 0.8rem;
+		font-size: 0.5rem;
 		width: 100%;
 		text-align: center;
 		padding-bottom: 3%;
+		line-height: 1rem;
 	}
 	.home .part3 .list-img{
 		width: 92%;
@@ -253,6 +256,10 @@
 	}
 
 	/*人气新品*/
+	.home .part4 .part4-content .newProducts h3{
+		margin-top: 0;
+		padding-top: 0.8rem;
+	}
 	.home .part4 .product{
 		width: 92%;
 		margin-left: 4%;
@@ -267,7 +274,7 @@
 		margin-top: 0px;
 	}
 	.home .part4 .newProducts .product p{
-		font-size: 0.95rem;
+		font-size: 0.7rem;
 		color: #10181f;
 	}
 	.home .part4 .newProducts .product .product-p1{
@@ -278,43 +285,10 @@
 	}
 	.home .part4 .newProducts .product p span{
 		color: #555;
-		font-size: 0.8rem;
+		font-size: 0.5rem;
 	}
 	.home .part4 .newProducts .product p .money{
 		color: #ff3600;
 		float: right;
-	}
-
-
-	@media screen and (min-width: 768px) {
-		.home header .title{
-			font-size:2rem; 
-		}
-		.home header .search input{
-			font-size: 1rem;
-		}
-		.home header .search .mint-searchbar-cancel{
-			font-size: 1rem;
-		}
-    	.home .swipe{
-			height: 19.5rem;
-		}
-		.home .part1 .text-content .text{
-			font-size: 1rem;
-		}
-		.home .part3 h3,
-		.home .part4 .part4-content .newProducts h3{
-			font-size: 1.5rem;
-		}
-		.home .part3 p,
-		.home .part4 .part4-content .newProducts .text{
-			font-size: 1rem;
-		}
-		.home .part4 .newProducts .product p{
-			font-size: 1.2rem;
-		}
-		.home .part4 .newProducts .product p span{
-			font-size: 1rem;
-		}
 	}
 </style>
