@@ -99,20 +99,26 @@
 	.login .mint-header{
 		background-color:#1b1b20;
 		color: #fff;
-		font-size: 1rem;
+		font-size: 0.8rem;
 		z-index: 100;
+		height: 2rem;
+		line-height: 2.5rem;
 	}
 	/*返回按钮*/
 	.login button,.login button label{
 		cursor:pointer;
+		height: 1.7rem;
+	}
+	.login .mintui{
+		font-size: 0.8rem;
 	}
 	/*登录组件*/
 	.login .loginForm section{
-		line-height: 2.5rem;
+		line-height: 2rem;
 		width: 100%;
 		text-align: center;
 		margin-top:1rem;
-		margin-bottom: 1.5rem; 
+		margin-bottom: 1.2rem; 
 	}
 	.login .loginForm section:nth-child(1){
 		margin-top: 2rem;
@@ -126,7 +132,7 @@
 	.login .loginForm section div input{
 		outline: none;
 		border: 0;
-		font-size: 0.9rem;
+		font-size: 0.7rem;
 		width: 90%;
 	}
 	/*登录按钮*/
@@ -136,6 +142,8 @@
 		border-radius: 0px;
 		color: #fff;
 		text-align: center;
-		margin-top: 2rem;
+		margin-top: 1.2rem;
+		height: 1.7rem;
+		font-size: 0.7rem;
 	}
 </style>

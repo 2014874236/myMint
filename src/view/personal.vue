@@ -12,7 +12,7 @@
 				<p>茶人-V0 您已累计消费0元</p>
 			</div>
 			<div class="btn">
-				<mt-button size="small">
+				<mt-button>
 					<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 					签到得积分
 				</mt-button>
@@ -109,15 +109,22 @@
 	.personal .mint-header{
 		background-color:#1b1b20;
 		color: #fff;
-		font-size: 1rem;
+		font-size: 0.8rem;
 		z-index: 100;
+		height: 2rem;
+		line-height: 2.5rem;
 	}
 	/*返回按钮*/
 	.personal button,.personal button label{
 		cursor:pointer;
+		height: 1.7rem;
 	}
+	.personal .mintui{
+		font-size: 0.8rem;
+	}
+	/*个人信息*/
 	.personal .personalInfo{
-		padding: 1.8rem 0.5rem;
+		padding: 1.5rem 0.4rem;
 		background: #ff3600;
 	}
 	.personal .personalInfo .Img{
@@ -126,8 +133,8 @@
 		text-align: center;
 	}
 	.personal .personalInfo .Img img{
-		width: 2.5rem;
-		height: 2.5rem;
+		width: 2.2rem;
+		height: 2.2rem;
 	}
 	.personal .personalInfo .username{
 		float: left;
@@ -135,17 +142,22 @@
 	}
 	.personal .personalInfo .username p{
 		color: #fff;
-		font-size: 0.8rem;
+		font-size: 0.7rem;
 		font-weight: 500;
 	}
 	.personal .personalInfo .btn{
 		float: left;
+		margin-left: 0.5rem;
+	}
+	.personal .personalInfo .btn button{
+		height: 1.7rem;
 	}
 	.personal .personalInfo .btn label{
-		font-size: 0.8rem;
+		font-size: 0.6rem;
 		color: #999;
 		opacity: 0.5;
 	}
+	/*积分余额*/
 	.personal .accountInfo{
 		background: #ff3600;
 	}
@@ -153,22 +165,23 @@
 		float: left;
 		list-style: none;
 		color: #fff;
-		font-size: 0.8rem;
+		font-size: 0.7rem;
 		width: 33%;
 		text-align: center;
-		padding: 0.6rem 0;
+		padding: 0.5rem 0;
 		background: #b22700;
 		margin-left: 0.5%;
 	}
 	.personal .accountInfo ul li:first-child{
 		margin-left: 0;
 	}
+	/*我的订单*/
 	.personal .myOrder{
-		font-size: 1rem;
+		font-size: 0.7rem;
 		background: #fff;
 	}
 	.personal .myOrder .order{
-		line-height: 4rem;
+		line-height: 3.7rem;
 		border-bottom: 1px solid #ddd;
 	}
 	.personal .myOrder .btn{
@@ -177,15 +190,16 @@
 		border-radius: 2px;
 		margin-left: 1rem;
 		margin-right: 0.8rem;
-		padding: 0 10px;
+		padding: 0 0.4rem;
+		height: 1.5rem;
 	}
 	.personal .myOrder .btn i{
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 	}
 	.personal .myOrder .order .moreOrder{
 		float: right;
 		color: #c8c7cc;
-		margin-right: 0.8rem;
+		margin-right: 0.7rem;
 	}
 	.personal .myOrder .orderInfo .wait{
 		float: left;
@@ -201,8 +215,11 @@
 	.personal .myOrder .orderInfo .wait .text{
 		color: #676767;
 		padding-top: 0.5rem;
+		font-size: 0.7rem;
 	}
+	/*收货地址等*/
 	.personal .otherInfo{
+		font-size: 0.7rem;
 		margin-top: 1rem;
 		background: #fff;
 	}
@@ -210,7 +227,7 @@
 	.personal .otherInfo .password,
 	.personal .otherInfo .phone,
 	.personal .otherInfo .login{
-		line-height: 4rem;
+		line-height: 3.7rem;
 		border-bottom: 1px solid #ddd;
 	}
 	.personal .otherInfo .login{
@@ -222,19 +239,20 @@
 	.personal .otherInfo .login .btn{
 		background: #51BCE0;
 		color: #FFF;
-		padding: 0 13px;
+		padding: 0 0.5rem;
 		margin-left: 1rem;
 		margin-right: 0.8rem;
+		height: 1.8rem;
 	}
 	.personal .otherInfo .password .btn{
 		background:#ff8c43;
 	}
 	.personal .otherInfo .phone .btn{
-		padding: 0 15px;
+		padding: 0 0.7rem;
 		background:#fa6c5e;
 	}
 	.personal .otherInfo .login .btn{
-		padding: 0 12px;
+		padding: 0 0.5rem;
 		background:#fa6c5e;
 	}
 	.personal .otherInfo .address .btn i,

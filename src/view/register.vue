@@ -153,17 +153,23 @@
 	.register .mint-header{
 		background-color:#1b1b20;
 		color: #fff;
-		font-size: 1rem;
+		font-size: 0.8rem;
 		z-index: 100;
+		height: 2rem;
+		line-height: 2.5rem;
 	}
 	.register button,.register button label{
 		cursor:pointer;
+		height: 1.7rem;
+	}
+	.register .mintui{
+		font-size: 0.8rem;
 	}
 	/*中间注册相关信息*/
 	.register .registerContent section{
 		width: 100%;
 		text-align: center;
-		line-height: 2.5rem;
+		line-height: 2rem;
 		margin-top: 1rem;
 		margin-bottom: 0.28rem;
 	}
@@ -176,19 +182,22 @@
 		border: 1px solid #e0e0e0;
 		background: #fff;
 	}
+	.register .registerContent div.code{
+		background:#f4f4f4;
+	}
 	.register .registerContent div label{
 		width: 25%;
-		line-height: 2.5rem;
+		line-height: 2rem;
 		float: left;
 		display: block;
 		text-align: center;
-		font-size: 0.95rem;
+		font-size: 0.7rem;
 		color: #333;
 	}
 	.register .registerContent div input{
-		font-size: 0.9rem;
+		font-size: 0.7rem;
 	    border: 0;
-	    line-height: 2.5rem;
+	    line-height: 2rem;
 	    width: 75%;
 	    outline: none;
 	}
@@ -213,6 +222,8 @@
      	background: #ff3600;
      	border-radius: 0px;
      	cursor:pointer;
+     	font-size: 0.7rem;
+     	height: 2rem;
      }
      .register .registerContent div .codeBtn label{
      	width: 100%;
@@ -224,12 +235,14 @@
      	background: #ff3600;
      	border-radius: 0px;
      	cursor:pointer;
+     	font-size: 0.7rem;
+     	height: 1.7rem;
      }
      /*协议部分*/
      .register .footer{
-     	line-height: 2.5rem;
+     	line-height: 2rem;
      	color: #999;
-     	font-size: 0.8rem;
+     	font-size: 0.7rem;
      	text-align: center;
      }
      .register .footer i,.register .footer span{

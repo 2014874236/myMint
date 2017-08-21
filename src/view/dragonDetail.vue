@@ -30,5 +30,6 @@
 	/*返回按钮*/
 	.dragonDetail button,.dragonDetail button label{
 		cursor:pointer;
+		height: 1.7rem;
 	}
 </style>

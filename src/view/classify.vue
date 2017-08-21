@@ -55,17 +55,21 @@
 		font-size: 0.8rem;
 		z-index: 100;
 		height: 2rem;
-		line-height: 8rem;
+		line-height: 2.5rem;
 	}
 	/*返回按钮*/
 	.classify button,.classify button label{
 		cursor:pointer;
+		height: 1.7rem;
+	}
+	.classify .mintui{
+		font-size: 0.8rem;
 	}
 	/*搜索*/
 	.classify .search{
 		width: 80%;
 		position: relative;
-		top:50px;
+		top:2.5rem;
 		left: 10%;
 		z-index: 1;
 	}
@@ -76,21 +80,28 @@
 	.classify .search .mint-search .mint-searchbar{
 		background: #ededed;
 	}
+	.classify .search .mint-search .mint-searchbar-inner{
+		height: 1.3rem;
+	}
+	.classify .search .mint-search .mint-searchbar-inner .mint-searchbar-core{
+		font-size: 0.5rem;
+	}
 	.classify .search .mint-searchbar-cancel{
-		font-size: 0.8rem;
+		font-size: 0.5rem;
 	}
 	/*茶品*/
 	.classify .tea{
 		position: relative;
-		top:60px;
+		top:4rem;
 	}
 	.classify .tea h3{
 		width: 100%;
 		font-weight: 500;
-		line-height: 40px;
+		font-size: 1rem;
+		line-height: 3rem;
 		color: #10181f;
 		text-align: center;
-		line-height: 60px;
+		line-height: 3rem;
 	}
 	.classify .tea ul{
 		width: 100%;
@@ -118,5 +129,6 @@
 	}
 	.classify .tea ul li .text{
 		margin-bottom: 10%;
+		font-size: 0.5rem;
 	}
 </style>

@@ -122,7 +122,6 @@
 	.home header{
 		width: 100%;
 		height: 3rem;
-		line-height: 3rem;
 		background: #ff3600;
 		text-align: center;
 	}
@@ -139,22 +138,26 @@
 	.home header .search{
 		float: left;
 		width: 50%;
-		line-height: 3rem;
+		text-align: center;
+		margin-top: 0.5rem;
 	}
-	/*.home header .search input{
+	.home header .search input{
 		font-size: 0.1rem;
-	}*/
+	}
 	.home .mint-search{
 		height: 100%;
 	}
-	/*.home .mint-searchbar-inner{
+	.home .mint-searchbar-inner{
 		height: 1rem;
 		margin-top: 2px;
-	}*/
-	/*.home .search .mint-searchbar{
+	}
+	.home .search .mint-searchbar{
 		background-color: #ff3600;
 		padding-right: 0px;
-	}*/
+	}
+	.home .search .mint-searchbar-inner .mintui-search{
+
+	}
 	.home header .search .mint-searchbar-cancel{
 		color: #fff;
 		font-size: 0.1rem;
