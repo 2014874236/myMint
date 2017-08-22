@@ -10,10 +10,12 @@
 			<h3>{{ list.title }}</h3>
 			<div>
 				<ul>
-					<li v-for="item in list.items">
-						<p><img :src="item.img"></p>
-						<p class="text">{{ item.text }}</p>
-					</li>
+					<router-link to="">
+						<li v-for="item in list.items">
+							<p><img :src="item.img"></p>
+							<p class="text">{{ item.text }}</p>
+						</li>
+					</router-link>
 					<div style="clear:both;"></div>
 				</ul>
 			</div>
@@ -93,6 +95,10 @@
 	.classify .tea{
 		position: relative;
 		top:4rem;
+		margin-bottom: 1rem;
+	}
+	.classify .tea:last-child{
+		margin-bottom: 3rem;
 	}
 	.classify .tea h3{
 		width: 100%;

@@ -91,10 +91,21 @@
 </template>
 <script> 
 	import store from './../store'
+	import Login from '@/view/login'
 	export default{
 		data(){
 			return{
 				loginForm:store.state.loginForm
+			}
+		},
+		computed:{
+			loginStatus(){
+				return this.$store.state.loginStatus;
+			}
+		},
+		mounted:function(){
+			if(!this.loginStatus){
+				this.$router.push({path:'/login',component:Login})
 			}
 		},
 		methods:{
@@ -222,12 +233,13 @@
 		font-size: 0.7rem;
 		margin-top: 1rem;
 		background: #fff;
+		margin-bottom: 3rem;
 	}
 	.personal .otherInfo .address,
 	.personal .otherInfo .password,
 	.personal .otherInfo .phone,
 	.personal .otherInfo .login{
-		line-height: 3.7rem;
+		line-height: 3.5rem;
 		border-bottom: 1px solid #ddd;
 	}
 	.personal .otherInfo .login{

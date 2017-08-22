@@ -51,6 +51,7 @@
 				<img v-lazy="item">
 			</div>
 		</section>
+		<!-- 人气新品 -->
 		<section class="part4">
 			<div class="part4-content">
 				<div class="newProducts">
@@ -82,6 +83,12 @@
 	import img11 from '../assets/img/11.jpg'
 	import img12 from '../assets/img/12.jpg'
 	import img13 from '../assets/img/13.jpg'
+	import img14 from '../assets/img/14.jpg'
+	import img15 from '../assets/img/15.jpg'
+	import img16 from '../assets/img/16.jpg'
+	import img17 from '../assets/img/17.jpg'
+	import img18 from '../assets/img/18.jpg'
+	import img19 from '../assets/img/19.jpg'
 
 	import {api} from '../global/api'
 	export default{
@@ -204,6 +211,7 @@
 	.home .part2,.home .part4{
 		width: 100%;
 		background: #f1f1f1;
+		margin-bottom: 3rem;
 	}
 	.home .part2 .part2-content,
 	.home .part4 .part4-content{
