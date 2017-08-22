@@ -57,14 +57,19 @@
 				<div class="newProducts">
 					<h3>{{ products.title }}</h3>
 					<p class="text">{{ products.note }}</p>
-					<div class="product" v-for="product in products.data">
-						<img :src=product.img>
-						<p class="product-p1">{{ product.bigContent }}</p>
-						<p class="product-p2">
-							<span v-html="product.smallContent"></span>
-							<span class="money"><i class="fa fa-jpy" aria-hidden="true"></i>{{ product.price.toFixed(2) }}</span> 
-							<!-- 保留两位小数点  -->
-						</p>
+					<div class="product" v-for="(product,index) in products.data" @click="handleSelected(index)">
+						<!-- <router-link :to="{ name:dragonDetail,params:{ id:index } }"> -->
+							<!-- <div> -->
+								<!-- <img src="../assets/img/14.jpg"> -->
+								<img :src=product.img>
+								<p class="product-p1">{{ product.bigContent }}</p>
+								<p class="product-p2">
+									<span v-html="product.smallContent"></span>
+									<span class="money"><i class="fa fa-jpy" aria-hidden="true"></i>{{ product.price.toFixed(2) }}</span> 
+									<!-- 保留两位小数点  -->
+								</p>
+							<!-- </div> -->
+						<!-- </router-link> -->
 					</div>
 				</div>
 			</div>
@@ -83,20 +88,26 @@
 	import img11 from '../assets/img/11.jpg'
 	import img12 from '../assets/img/12.jpg'
 	import img13 from '../assets/img/13.jpg'
-	import img14 from '../assets/img/14.jpg'
-	import img15 from '../assets/img/15.jpg'
-	import img16 from '../assets/img/16.jpg'
-	import img17 from '../assets/img/17.jpg'
-	import img18 from '../assets/img/18.jpg'
-	import img19 from '../assets/img/19.jpg'
+	// import img14 from '../assets/img/14.jpg'
+	// import img15 from '../assets/img/15.jpg'
+	// import img16 from '../assets/img/16.jpg'
+	// import img17 from '../assets/img/17.jpg'
+	// import img18 from '../assets/img/18.jpg'
+	// import img19 from '../assets/img/19.jpg'
+	import DragonDetail from '@/view/dragonDetail'
+	import Login from '@/view/login'
 
 	import {api} from '../global/api'
 	export default{
 		data(){
 			return {
 				value:'',
+				// 图片轮播
 				imgs:[img1,img2,img3],
+				// 8大热销茶叶品类
 				list:[img6,img7,img8,img9,img10,img11,img12,img13],
+				// 人气新品
+				// Img:[img14,img15,img16,img17,img18,img19],
 				loading:false,
 				products:'',
 			}
@@ -110,13 +121,10 @@
 				this.$http.get(api.home).then((response) => {
 					this.products=response.data;
 				})
+			},
+			handleSelected:function(index){
+				this.$router.push({ path:'/dragonDetail',component:DragonDetail })
 			}
-			// loadMore:function(){
-			// 	this.loading=true;
-			// 	setTimeout(() => {
-			// 		this.loading=false;
-			// 	},6000);
-			// }
 		}
 	}
 	

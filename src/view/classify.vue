@@ -10,16 +10,17 @@
 			<h3>{{ list.title }}</h3>
 			<div>
 				<ul>
-					<router-link to="">
-						<li v-for="item in list.items">
+					<li v-for="item in list.items">
+						<router-link to="">
 							<p><img :src="item.img"></p>
 							<p class="text">{{ item.text }}</p>
-						</li>
-					</router-link>
+						</router-link>
+					</li>
 					<div style="clear:both;"></div>
 				</ul>
 			</div>
 		</section>
+		<router-view></router-view>
 	</div>
 </template>
 <script>
@@ -134,7 +135,8 @@
 		text-align: center;
 	}
 	.classify .tea ul li .text{
-		margin-bottom: 10%;
+		padding-bottom: 10%;
 		font-size: 0.5rem;
+		color: #10181f;
 	}
 </style>

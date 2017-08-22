@@ -16,6 +16,8 @@ import Shopping from '@/view/shopping'
 import EmptyShopping from '@/view/shopping/emptyShopping'
 // 个人中心
 import Personal from '@/view/personal'
+// 商品详细页
+import DragonDetail from '@/view/dragonDetail'
 
 
 Vue.use(Router)
@@ -24,7 +26,12 @@ export default new Router({
   routes: [
     { path:'/',component:NavBar ,
     	children:[
-    		{ path:'home',component:Home },
+    		{ path:'home',component:Home
+          // children:[
+            // { path:'dragonDetail',component:DragonDetail,name:'dragonDetail' }
+          // ]
+        },
+        { path:'dragonDetail',component:DragonDetail,name:'dragonDetail' },
     		{ path:'classify',component:Classify },
         { path:'shopping',component:Shopping
           // children:[
