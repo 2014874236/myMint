@@ -6,15 +6,21 @@
 		<div class="emptyShopping">
 			<p>你的购物车没有任何商品</p>
 		</div>
+		<NavBar></NavBar>
 	</div>
 </template>
 <script>
+	// 底部导航
+	import NavBar from '@/view/navBar'
 	import Login from '@/view/login'
 	export default{
 		data(){
 			return{
 
 			}
+		},
+		components:{
+			NavBar
 		},
 		computed:{
 			loginStatus(){

@@ -77,7 +77,7 @@
 					this.loginForm.password='';
 				}
 				else{
-					this.$router.push({ path:'/home',component:Home });
+					this.$router.push({ path:'/',component:Home });
 					// this.loginStatus=true;
 					store.dispatch('setloginStatus',true);
 					// console.log("login页面的loginStatus值",this.loginStatus);

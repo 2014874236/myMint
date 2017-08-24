@@ -87,9 +87,12 @@
 				<span class="right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
 			</div>
 		</div>
+		<NavBar></NavBar>
 	</div>
 </template>
 <script> 
+	// 底部导航
+	import NavBar from '@/view/navBar'
 	import store from './../store'
 	import Login from '@/view/login'
 	export default{
@@ -97,6 +100,9 @@
 			return{
 				loginForm:store.state.loginForm
 			}
+		},
+		components:{
+			NavBar
 		},
 		computed:{
 			loginStatus(){

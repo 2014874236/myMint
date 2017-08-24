@@ -21,9 +21,12 @@
 			</div>
 		</section>
 		<router-view></router-view>
+		<NavBar></NavBar>
 	</div>
 </template>
 <script>
+	// 底部导航
+	import NavBar from '@/view/navBar'
 	import {api} from '../global/api'
 	export default{
 		data(){
@@ -31,6 +34,9 @@
 				value:'',
 				lists:''
 			}
+		},
+		components:{
+			NavBar
 		},
 		mounted:function(){
 			this.getData();

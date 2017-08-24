@@ -13,7 +13,6 @@ import Register from '@/view/register'
 import Login from '@/view/login'
 // 购物车
 import Shopping from '@/view/shopping'
-import EmptyShopping from '@/view/shopping/emptyShopping'
 // 个人中心
 import Personal from '@/view/personal'
 // 商品详细页
@@ -24,25 +23,13 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    { path:'/',component:NavBar ,
-    	children:[
-    		{ path:'home',component:Home
-          // children:[
-            // { path:'dragonDetail',component:DragonDetail,name:'dragonDetail' }
-          // ]
-        },
-        { path:'dragonDetail',component:DragonDetail,name:'dragonDetail' },
-    		{ path:'classify',component:Classify },
-        { path:'shopping',component:Shopping
-          // children:[
-          //   { path:'emptyShopping',component:EmptyShopping }
-          // ]
-        },
-        { path:'personal',component:Personal },
-    		{ path:'register',component:Register },
-        { path:'login',component:Login },
-   			{ path:'', redirect:'home' }
-    	]
-	}
+    		{ path:'/home',component:Home },
+        { path:'/dragonDetail',component:DragonDetail },
+    		{ path:'/classify',component:Classify },
+        { path:'/shopping',component:Shopping },
+        { path:'/personal',component:Personal },
+    		{ path:'/register',component:Register },
+        { path:'/login',component:Login },
+   			{ path:'/', redirect:'home' }
   ]
 })

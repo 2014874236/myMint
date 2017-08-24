@@ -74,6 +74,7 @@
 				</div>
 			</div>
 		</section>
+		<NavBar></NavBar>
 	</div>
 </template>
 <script>
@@ -94,6 +95,8 @@
 	// import img17 from '../assets/img/17.jpg'
 	// import img18 from '../assets/img/18.jpg'
 	// import img19 from '../assets/img/19.jpg'
+	// 底部导航
+	import NavBar from '@/view/navBar'
 	import DragonDetail from '@/view/dragonDetail'
 	import Login from '@/view/login'
 
@@ -111,6 +114,9 @@
 				loading:false,
 				products:'',
 			}
+		},
+		components:{
+			NavBar
 		},
 		mounted:function(){
 			this.getData();
