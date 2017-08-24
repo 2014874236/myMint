@@ -62,7 +62,7 @@
 		background-color:#1b1b20;
 		color: #fff;
 		font-size: 0.8rem;
-		z-index: 100;
+		z-index: 1000;
 		height: 2rem;
 		line-height: 2.5rem;
 	}

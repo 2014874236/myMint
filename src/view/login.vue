@@ -1,7 +1,9 @@
 <template>
 	<div class="login">
 		<mt-header title="账户登录">
-		    <mt-button icon="back" slot="left" @click="goBack">返回</mt-button>
+			<router-link slot="left" to="/home">
+		   		<mt-button icon="back">返回</mt-button>
+		   	</router-link>
 		  	<router-link to="/register" slot="right">
 		  		<mt-button >注册</mt-button>
 		  	</router-link>
@@ -20,6 +22,12 @@
 			<section>
 				<mt-button @click="loginSubmit">登录</mt-button>
 			</section>	
+			<section class="test">
+				<p>测试：</p>
+				<p>用户名/密码:2014874236/123456</p>
+				<p>用户名/密码:2014874239/123456</p>
+				<p>用户名/密码:2014874207/654321</p>
+			</section>
 		</form>
 		<!-- 验证码 -->
 		<!-- <div class="img_change_img">
@@ -51,9 +59,6 @@
 			// this.getCaptchas();
 		},
 		methods:{
-			goBack:function(){
-				this.$router.go(-1);
-			},
 			getData:function(){
 				this.$http.get(api.login).then((response) => {
 					console.log("登录页面response的值",response);
@@ -144,6 +149,9 @@
 		text-align: center;
 		margin-top: 1.2rem;
 		height: 1.7rem;
+		font-size: 0.7rem;
+	}
+	.login .test{
 		font-size: 0.7rem;
 	}
 </style>
